@@ -1,14 +1,17 @@
-name: Deploy
-
+name: Publish Release
 on:
   push:
     branches:
-    - master
+    -master
 
 jobs:
-  deploy:
-
+  build:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: frankjuniorr/github-create-release-action@master
+    - uses: actions/checkout@master
+    - name: Create a Release
+      uses: elgohr/Github-Release-Action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        args: Latest
