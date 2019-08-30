@@ -1,15 +1,14 @@
-workflow "Deploy Release" {
-  on = "push"
-  resolves = [" Github Create Release"]
-}
+name: Deploy
 
-action "Filters for Master branch" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-}
+on:
+  push:
+    branches:
+    - master
 
-action " Github Create Release" {
-  uses = "frankjuniorr/github-create-release-action@master
-  needs = ["Filters for Master branch"]
-  secrets = ["GITHUB_TOKEN"]
-}
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: frankjuniorr/github-create-release-action@master
