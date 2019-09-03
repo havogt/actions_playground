@@ -14,5 +14,6 @@ jobs:
       uses: elgohr/Github-Release-Action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_USER: havogt
       with:
         args: Latest
