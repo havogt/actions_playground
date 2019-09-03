@@ -1,2 +1,2 @@
-int main() { return 0; // fixed
+int main() { return 0;
 }
