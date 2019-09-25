@@ -14,7 +14,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: format
       uses: docker://unibeautify/clang-format
-      run: clang-format -i test.cc
+      with:
+        args: -i test.cc
 #      run: git diff -U0 --no-color HEAD^ | clang-format-diff -i -p1
 
     - name: status
