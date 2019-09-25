@@ -15,6 +15,7 @@ jobs:
     - name: format
       uses: docker://unibeautify/clang-format
       with:
+        entrypoint: clang-format-diff
         args: -i test.cc
 #      run: git diff -U0 --no-color HEAD^ | clang-format-diff -i -p1
 
