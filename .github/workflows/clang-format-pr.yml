@@ -13,6 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: format
-      run: git diff -U0 --no-color HEAD^ | clang-format-diff.py -i -p1
+      run: git diff -U0 --no-color HEAD^ | clang-format-diff -i -p1
     - name: status
       run: git status
