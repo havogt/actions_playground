@@ -14,6 +14,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: status
       run: git status
-    - uses: docker.pkg.github.com/havogt/actions_playground/clang-format-diff:docker-base-layer
+    - uses: havogt/actions_playground
     - name: status
       run: git status
