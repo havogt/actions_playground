@@ -15,7 +15,5 @@ jobs:
     - name: status
       run: git status
     - uses: docker.pkg.github.com/havogt/actions_playground/clang-format-diff:docker-base-layer
-      volumes:
-        - /:/workdir
     - name: status
       run: git status
