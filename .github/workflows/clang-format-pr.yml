@@ -6,13 +6,22 @@ on:
     - master
 
 jobs:
-  build:
+  check-out:
 
     runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v1
-    - name: format
-      run: git diff -U0 --no-color HEAD^ | clang-format-diff -i -p1
+    - name: status
+      run: git status
+  format:  
+    container:
+      image: docker.pkg.github.com/havogt/actions_playground/clang-format-diff:docker-base-layer
+      volumes:
+        - /:/workdir
+         
+  status:
+    runs-on: ubuntu-latest
+    steps:
     - name: status
       run: git status
