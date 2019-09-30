@@ -17,7 +17,7 @@ jobs:
     - uses: havogt/actions_playground2/copy-a-file@master
     - name: status
       run: git status
-    - name: ls
-      run: ls
-    - name: pwd
-      run: pwd
+    - name: commit
+      run: git commit -am "file changed"
+    - name: push
+      run: git push
