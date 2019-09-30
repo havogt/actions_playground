@@ -12,7 +12,7 @@ jobs:
     
     steps:
     - name: checkout
-      run: git clone $GITHUB_REPOSITORY . && git checkout $GITHUB_SHA
+      run: git clone git@github.com:$GITHUB_REPOSITORY.git . && git checkout $GITHUB_SHA
     - name: status
       run: git status
     - uses: havogt/actions_playground2/copy-a-file@master
