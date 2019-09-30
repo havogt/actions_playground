@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - uses: actions/checkout@v1
     - name: checkout
-      run: git clone https://github.com/${GITHUB_REPOSITORY}.git . && git checkout ${GITHUB_SHA}
+      run: git remote add upstream https://github.com/${GITHUB_REPOSITORY}.git . && git fetch upstream
     - name: status
       run: git status
     - uses: havogt/actions_playground2/copy-a-file@master
