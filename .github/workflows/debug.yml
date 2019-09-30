@@ -1,0 +1,20 @@
+name: clang-format
+
+on:
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  check-out:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: status
+      run: git status
+    - name: ls
+      run: ls
+    - name: pwd
+      run: pwd
