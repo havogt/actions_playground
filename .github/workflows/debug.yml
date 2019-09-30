@@ -19,12 +19,10 @@ jobs:
     - uses: havogt/actions_playground2/just-ls@master
     - uses: havogt/actions_playground2/git-diff@master
     - uses: docker://havogt/clang-format-diff:6.0.1
-    - name: cat
-      run: cat patch.diff
-    - name: apply
-      run: git apply patch.diff
     - name: status
       run: git status
+    - name: diff
+      run: git diff
     - name: branch
       run: git ls-remote
     - name: commit
