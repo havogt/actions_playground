@@ -14,8 +14,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: status
       run: git status
-    - uses: havogt/actions_playground2/git-diff@master
     - uses: havogt/actions_playground2/copy-a-file@master
+    - uses: havogt/actions_playground2/git-diff@master
     - name: status
       run: git status
     - name: commit
