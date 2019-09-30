@@ -1,2 +1,2 @@
-int main() {    return 0; 
+int main() {int a= 3;    return 0; 
 }
