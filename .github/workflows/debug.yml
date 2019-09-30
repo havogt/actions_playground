@@ -19,6 +19,8 @@ jobs:
     - uses: havogt/actions_playground2/git-diff@master
     - name: status
       run: git status
+    - name: branch
+      run: git branch
     - name: commit
       run: git commit -am "file changed"
     - name: push
