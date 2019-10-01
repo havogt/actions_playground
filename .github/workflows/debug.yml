@@ -13,6 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: checkout
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: git remote add upstream https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git && git fetch upstream
     - name: status
       run: git status
@@ -28,4 +30,6 @@ jobs:
     - name: commit
       run: git config --global user.name '${GITHUB_ACTOR}' && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com' && git commit -am "file changed"
     - name: push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: git push upstream HEAD
