@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: checkout
-      run: git remote add upstream https://github.com/${GITHUB_REPOSITORY}.git && git fetch upstream
+      run: git remote add upstream https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git && git fetch upstream
     - name: status
       run: git status
 #     - uses: havogt/actions_playground2/just-ls@master
@@ -28,4 +28,4 @@ jobs:
     - name: commit
       run: git config --global user.name '${GITHUB_ACTOR}' && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com' && git commit -am "file changed"
     - name: push
-      run: git push -u upstream HEAD
+      run: git push upstream HEAD
