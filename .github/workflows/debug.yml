@@ -26,8 +26,6 @@ jobs:
     - name: branch
       run: git ls-remote
     - name: commit
-      run: git config --global user.name '${GITHUB_ACTOR}'
-      run: git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
-      run: git commit -am "file changed"
+      run: git config --global user.name '${GITHUB_ACTOR}' && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com' && git commit -am "file changed"
     - name: push
       run: git push -u upstream HEAD"
