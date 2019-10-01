@@ -16,8 +16,8 @@ jobs:
       run: git remote add upstream https://github.com/${GITHUB_REPOSITORY}.git && git fetch upstream
     - name: status
       run: git status
-    - uses: havogt/actions_playground2/just-ls@master
-    - uses: havogt/actions_playground2/git-diff@master
+#     - uses: havogt/actions_playground2/just-ls@master
+#     - uses: havogt/actions_playground2/git-diff@master
     - uses: docker://havogt/clang-format-diff:6.0.1
     - name: status
       run: git status
