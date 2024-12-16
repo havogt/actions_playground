@@ -1,0 +1,14 @@
+name: test event name
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install pypa/build
+      run: |
+        echo ${{ github.event_name }}
