@@ -20,10 +20,6 @@ jobs:
       if: ${{ github.event_name == 'workflow-dispatch' }}
       run: |
         echo ${{ github.event_name }}
-    - name: and again
-      if: ${{ github.event_name == workflow-dispatch }}
-      run: |
-        echo ${{ github.event_name }}
   conditional_trigger:
     if: github.event_name == 'workflow-dispatch'
     name: runs_on_dispatch
