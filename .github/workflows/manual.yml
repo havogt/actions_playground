@@ -9,6 +9,6 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-    - name: Install pypa/build
+    - name: print event_name
       run: |
         echo ${{ github.event_name }}
